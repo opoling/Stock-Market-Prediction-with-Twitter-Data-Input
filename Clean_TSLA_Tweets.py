@@ -35,4 +35,37 @@ def clean(df):
 
 clean(tweets_df)
 tweets_df.head()
-                                                
+
+# Testing the Data:
+tweets_df.tweet[500]  
+tweets_df.cleaned_tweet[500]
+
+# 4. Lemmatizing the cleaned tweets
+lemmatizer = WordNetLemmatizer()
+
+def lemmatize(tweets):
+    for i in range(len(tweets)):
+        for w in [tweets[i]]:
+            pos_tag_list = nltk.pos_tag(w)
+        wordnet_tags = []
+        for j in pos_tag_list:
+            # adjective
+            if j[1].startswith('J'):
+                wordnet_tags.append(wordnet.ADJ)
+            # noun
+            elif j[1].startswith('N'):
+                wordnet_tags.append(wordnet.NOUN)
+            # adverb
+            elif j[1].startswith('R'):
+                wordnet_tags.append(wordnet.ADV)
+            # verb
+            elif j[1].startswith('V'):
+                wordnet_tags.append(wordnet.VERB)
+            # default to noun
+            else:
+                wordnet_tags.append(wordnet.NOUN)
+        lem_words = []
+        for k in range(len(tweets[i])):
+            lem_words.append(lemmatizer.lemmatize(tweets[i][k], pos=wordnet_tags[k]))
+        lem_tweet = ' '.join(lem_words)
+        tweets[i] = lem_tweet
