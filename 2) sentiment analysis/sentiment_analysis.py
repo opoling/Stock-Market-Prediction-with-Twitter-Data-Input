@@ -27,3 +27,7 @@ tweets_df.isnull().sum()
 tweets_df = tweets_df.dropna()
 
 # Calculating sentiment scores
+# use TextBlob for sentiment scores:
+tweets_df['sentiment_score'] = tweets_df.apply(lambda row: TextBlob(row.cleaned_tweet).sentiment[0], axis=1)
+tweets_df.head()
+
