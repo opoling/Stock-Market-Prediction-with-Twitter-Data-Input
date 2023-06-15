@@ -18,3 +18,12 @@ tweets_df.info()
 #Change date column into datetime type
 tweets_df.date=pd.to_datetime(tweets_df.date)
 tweets_df.info()
+
+# check for null values
+# https://www.miamioh.edu/cads/students/coding-tutorials/python/data-cleaning/index.html
+tweets_df.isnull().sum()
+
+# delete the null values
+tweets_df = tweets_df.dropna()
+
+# Calculating sentiment scores
