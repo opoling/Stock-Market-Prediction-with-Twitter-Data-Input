@@ -65,3 +65,7 @@ daily_sentiment_scores_df = tweets_df[['date', 'sentiment_score']]
 daily_sentiment_scores_df.head()
 
 #daily_sentiment_scores_df.sentiment_score[1000]
+
+# average sentiment scores of each day
+daily_sentiment_scores_df = daily_sentiment_scores_df.resample('D', on='date').mean()
+daily_sentiment_scores_df.head()
