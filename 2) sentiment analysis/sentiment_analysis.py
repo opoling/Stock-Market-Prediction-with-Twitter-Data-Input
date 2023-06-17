@@ -59,3 +59,5 @@ ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha='right', fontsize=14)
 ax.set_title('Bar Chart of Tweet Counts Sentiment Scores' , fontsize=15)
 ax.set_ylim(0, 70000)
 plt.show()
+
+# Caluculate the average sentiment scores each day
