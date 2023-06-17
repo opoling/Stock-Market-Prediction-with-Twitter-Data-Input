@@ -48,13 +48,14 @@ random_subset.head(5)
 
 # 5. Frequency analysis of sentiment scores
 # plotting counts of tweets for binned sentiment scores
+# plotting counts of tweets for binned sentiment scores
 bins = [-1.0, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1]
 tweets_df['bin'] = pd.cut(tweets_df['sentiment_score'], bins)
-plt.figure(figsize=(16,9))
+plt.figure(figsize=(12,7))
 ax = sns.countplot(x=tweets_df['bin'])
 ax.set_ylabel('Number of Tweets', fontsize=12)
 ax.set_xlabel('Sentiment Scores', fontsize=12)
 ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha='right', fontsize=14)
-ax.set_title('Binned Sentiment Scores Tweet Counts', fontsize=20)
-ax.set_ylim(0, 120000)
+ax.set_title('Bar Chart of Tweet Counts Sentiment Scores' , fontsize=15)
+ax.set_ylim(0, 70000)
 plt.show()
