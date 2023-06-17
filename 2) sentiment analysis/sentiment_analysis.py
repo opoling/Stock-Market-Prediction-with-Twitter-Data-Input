@@ -60,4 +60,6 @@ ax.set_title('Bar Chart of Tweet Counts Sentiment Scores' , fontsize=15)
 ax.set_ylim(0, 70000)
 plt.show()
 
-# Caluculate the average sentiment scores each day
+# 6. Caluculate the average sentiment scores each day
+daily_sentiment_scores_df = tweets_df[['date', 'sentiment_score']]
+daily_sentiment_scores_df.head(5)
