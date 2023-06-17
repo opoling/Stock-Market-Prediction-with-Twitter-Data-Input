@@ -62,4 +62,6 @@ plt.show()
 
 # 6. Caluculate the average sentiment scores each day
 daily_sentiment_scores_df = tweets_df[['date', 'sentiment_score']]
-daily_sentiment_scores_df.head(5)
+daily_sentiment_scores_df.head()
+
+#daily_sentiment_scores_df.sentiment_score[1000]
