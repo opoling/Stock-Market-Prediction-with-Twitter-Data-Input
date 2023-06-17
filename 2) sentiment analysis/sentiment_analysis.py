@@ -31,3 +31,5 @@ tweets_df = tweets_df.dropna()
 tweets_df['sentiment_score'] = tweets_df.apply(lambda row: TextBlob(row.cleaned_tweet).sentiment[0], axis=1)
 tweets_df.head()
 
+tweets_df.cleaned_tweet[174]
+tweets_df.sentiment_score[174]
