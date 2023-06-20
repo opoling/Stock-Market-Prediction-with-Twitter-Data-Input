@@ -89,3 +89,17 @@ ax.set_xlabel('Date', fontsize=12)
 ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha='right', fontsize=12)
 ax.set_title('Bottom 10 Daily Average Sentiment Scores', fontsize=22)
 plt.show()
+
+# 7. Removing sentiment scores consisting zero
+tweets_df.head()
+# make new copy of df for df that doesn't have zero scores
+tweets_dfnullzero = tweets_df.copy()
+tweets_dfnullzero.head()
+
+# check amount of tweets with zeros
+(tweets_dfnullzero.sentiment_score == 0).sum()
+
+# remove them
+#tweets_dfnullzero.sentiment_score !=0
+tweets_dfnullzero = tweets_dfnullzero[tweets_dfnullzero.sentiment_score !=0 ]
+(tweets_dfnullzero.sentiment_score == 0).sum()
