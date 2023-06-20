@@ -79,3 +79,13 @@ ax.set_xlabel('Date', fontsize=12)
 ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha='right', fontsize=12)
 ax.set_title('Top 10 Daily Average Sentiment Scores', fontsize=22)
 plt.show()
+
+# plot bottom 10 daily sentiment score averages
+bottom_avg_df = daily_sentiment_scores_df.nsmallest(columns='sentiment_score', n=10)
+plt.figure(figsize=(16,5))
+ax = sns.barplot(data=bottom_avg_df, x=bottom_avg_df.index.date, y=bottom_avg_df['sentiment_score'])
+ax.set_ylabel('Average Sentiment Score', fontsize=12)
+ax.set_xlabel('Date', fontsize=12)
+ax.set_xticklabels(ax.get_xticklabels(), rotation=40, ha='right', fontsize=12)
+ax.set_title('Bottom 10 Daily Average Sentiment Scores', fontsize=22)
+plt.show()
