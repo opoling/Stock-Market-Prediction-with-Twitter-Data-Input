@@ -70,7 +70,7 @@ daily_sentiment_scores_df.head()
 daily_sentiment_scores_df = daily_sentiment_scores_df.resample('D', on='date').mean()
 daily_sentiment_scores_df.head()
 
-# Plot top 10 daily sentiment score averages
+# Plot top ten daily sentiment score averages
 top_avg_df = daily_sentiment_scores_df.nlargest(columns='sentiment_score', n=10)
 plt.figure(figsize=(16,5))
 ax = sns.barplot(data=top_avg_df, x=top_avg_df.index.date, y=top_avg_df['sentiment_score'])
