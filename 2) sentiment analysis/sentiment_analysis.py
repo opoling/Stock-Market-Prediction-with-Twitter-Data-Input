@@ -103,3 +103,7 @@ tweets_dfnullzero.head()
 #tweets_dfnullzero.sentiment_score !=0
 tweets_dfnullzero = tweets_dfnullzero[tweets_dfnullzero.sentiment_score !=0 ]
 (tweets_dfnullzero.sentiment_score == 0).sum()
+
+# Only take the date and sentiment score columns
+tweets_dfnullzero = tweets_dfnullzero[['date','sentiment_score']]
+tweets_dfnullzero.head()
