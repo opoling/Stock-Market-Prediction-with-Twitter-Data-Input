@@ -107,3 +107,13 @@ tweets_dfnullzero = tweets_dfnullzero[tweets_dfnullzero.sentiment_score !=0 ]
 # Only take the date and sentiment score columns
 tweets_dfnullzero = tweets_dfnullzero[['date','sentiment_score']]
 tweets_dfnullzero.head()
+
+# preview daily average w/o zero sentiment scores
+# https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html
+tweets_dfnullzero = tweets_dfnullzero.groupby(['date'], as_index=False).mean()
+# adding final average sentiment scores
+daily_sentiment_scores_df['sentiment_score_final'] = tweets_dfnullzero.sentiment_score.values
+daily_sentiment_scores_df.head()
+
+# 8. Save sentiment analysis results
+daily_sentiment_scores_df.to_csv('daily_avg_sen_scores.csv')
