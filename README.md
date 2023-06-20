@@ -1,6 +1,6 @@
 # Stock Market Prediction with Twitter Data Input
 
-***FYI:** This personal project was first proposed to my college as a summer research opportunity with my professor advisor. I was very excited for the opportunity to have this as a college research and learn more about the algorithms used for this research, the machine learning concepts, and also using real life factor of stock prediction like Twitter. I was very dissapointed when I learned my propsal was rejected only because I proposed using one stock ($TSLA) for this research. This did not stop me from pursuing my interest, I had made the decision in doing this research by myself
+***FYI:** This personal project was first proposed to my college as a summer research opportunity with my professor advisor. I was very excited for the opportunity to have this as college research and learn more about the algorithms used for this research, the machine learning concepts, and also using real life factor of stock prediction like Twitter. I was very disappointed when I learned my proposal was rejected only because I proposed using one stock ($TSLA) for this research. This did not stop me from pursuing my interest, I made the decision in doing this research by myself
 
 ## My College Summer Research Proposal: Machine Learning Approach for Stock Market Prediction with Twitter Data Input
 
